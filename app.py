@@ -9,12 +9,7 @@ def index():
     if request.method == "POST":
         print("FORM DATA RECEIVED")
 
-        if "file" not in request.files:
-            return redirect(request.url)
-
         file = request.files["speech2text"]
-        if file.filename == "":
-            return redirect(request.url)
             
         if file:
             recognizer = sr.Recognizer()
